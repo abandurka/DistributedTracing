@@ -1,9 +1,8 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace DistributionTracing.WebApp1.Controllers
+namespace DistributedTracing.WebApp3.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -17,12 +16,9 @@ namespace DistributionTracing.WebApp1.Controllers
         }
 
         [HttpGet]
-        public async Task<string> Get(string i)
+        public async Task<int> Get(int i)
         {
-            var client = new HttpClient();
-            var response = await client.GetStringAsync("http://localhost:5001/tracing?i=" + i);
-            
-            return response;
+            return await Task.FromResult(i);
         }
     }
 }

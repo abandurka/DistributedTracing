@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Trace.Samplers;
 
-namespace DistributionTracing.WebApp2
+namespace DistributedTracing.WebApp2
 {
     public class Startup
     {

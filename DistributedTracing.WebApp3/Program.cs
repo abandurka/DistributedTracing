@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace DistributionTracing.WebApp2
+namespace DistributedTracing.WebApp3
 {
     public class Program
     {

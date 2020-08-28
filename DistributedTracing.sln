@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTracing.WebApp1", "DistributionTracing.WebApp1\DistributionTracing.WebApp1.csproj", "{F244C8F8-186E-4337-B7D0-D8034811639B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.WebApp1", "DistributedTracing.WebApp1\DistributedTracing.WebApp1.csproj", "{F244C8F8-186E-4337-B7D0-D8034811639B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTracing.WebApp2", "DistributionTracing.WebApp2\DistributionTracing.WebApp2.csproj", "{9DF45547-7456-4E53-8C11-BBF10EA75DE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.WebApp2", "DistributedTracing.WebApp2\DistributedTracing.WebApp2.csproj", "{9DF45547-7456-4E53-8C11-BBF10EA75DE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTracing.WebApp3", "DistributionTracing.WebApp3\DistributionTracing.WebApp3.csproj", "{A77B95B4-BECC-41D1-80F7-972F8A7A3704}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedTracing.WebApp3", "DistributedTracing.WebApp3\DistributedTracing.WebApp3.csproj", "{A77B95B4-BECC-41D1-80F7-972F8A7A3704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

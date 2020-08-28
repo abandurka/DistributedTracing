@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace DistributionTracing.WebApp2.Controllers
+namespace DistributedTracing.WebApp1.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -20,7 +20,7 @@ namespace DistributionTracing.WebApp2.Controllers
         public async Task<string> Get(string i)
         {
             var client = new HttpClient();
-            var response = await client.GetStringAsync("http://localhost:5002/tracing?i=" + i);
+            var response = await client.GetStringAsync("http://localhost:5001/tracing?i=" + i);
             
             return response;
         }
