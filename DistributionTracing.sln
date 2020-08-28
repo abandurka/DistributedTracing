@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTracing.WebApp1", "DistributionTracing.WebApp1\DistributionTracing.WebApp1.csproj", "{F244C8F8-186E-4337-B7D0-D8034811639B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTracing.WebApp2", "DistributionTracing.WebApp2\DistributionTracing.WebApp2.csproj", "{9DF45547-7456-4E53-8C11-BBF10EA75DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTracing.WebApp3", "DistributionTracing.WebApp3\DistributionTracing.WebApp3.csproj", "{A77B95B4-BECC-41D1-80F7-972F8A7A3704}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F244C8F8-186E-4337-B7D0-D8034811639B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F244C8F8-186E-4337-B7D0-D8034811639B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F244C8F8-186E-4337-B7D0-D8034811639B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F244C8F8-186E-4337-B7D0-D8034811639B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF45547-7456-4E53-8C11-BBF10EA75DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF45547-7456-4E53-8C11-BBF10EA75DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF45547-7456-4E53-8C11-BBF10EA75DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF45547-7456-4E53-8C11-BBF10EA75DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77B95B4-BECC-41D1-80F7-972F8A7A3704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77B95B4-BECC-41D1-80F7-972F8A7A3704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77B95B4-BECC-41D1-80F7-972F8A7A3704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77B95B4-BECC-41D1-80F7-972F8A7A3704}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
