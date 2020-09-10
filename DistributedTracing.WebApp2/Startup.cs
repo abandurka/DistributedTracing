@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OpenTelemetry.Trace;
-using OpenTelemetry.Trace.Samplers;
 
 namespace DistributedTracing.WebApp2
 {
@@ -22,16 +21,15 @@ namespace DistributedTracing.WebApp2
         {
             services.AddControllers();
             
-            services.AddOpenTelemetry(builder =>
+            services.AddOpenTelemetryTracerProvider(builder =>
             {
                 builder.SetSampler(new AlwaysOnSampler());
-
-                builder.UseJaegerExporter(o => Configuration.Bind("Jaeger", o));
-
-                builder.AddHttpInstrumentation();
+                builder.AddJaegerExporter(o => Configuration.Bind("Jaeger", o));
                 builder.AddAspNetCoreInstrumentation();
                 builder.AddHttpClientInstrumentation();
             });
+
+            services.AddScoped<IEventSender, EventSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

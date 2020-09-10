@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OpenTelemetry.Trace;
-using OpenTelemetry.Trace.Samplers;
 
 namespace DistributedTracing.WebApp3
 {
@@ -22,13 +21,10 @@ namespace DistributedTracing.WebApp3
         {
             services.AddControllers();
             
-            services.AddOpenTelemetry(builder =>
+            services.AddOpenTelemetryTracerProvider(builder =>
             {
                 builder.SetSampler(new AlwaysOnSampler());
-
-                builder.UseJaegerExporter(o => Configuration.Bind("Jaeger", o));
-
-                builder.AddHttpInstrumentation();
+                builder.AddJaegerExporter(o => Configuration.Bind("Jaeger", o));
                 builder.AddAspNetCoreInstrumentation();
                 builder.AddHttpClientInstrumentation();
             });
