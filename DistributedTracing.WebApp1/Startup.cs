@@ -1,10 +1,12 @@
+using System.Linq;
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using OpenTelemetry.Trace.Samplers;
 
 namespace DistributedTracing.WebApp1
 {
@@ -22,25 +24,24 @@ namespace DistributedTracing.WebApp1
         {
             services.AddControllers();
 
-            services.AddOpenTelemetry(builder =>
+            services.AddOpenTelemetryTracing(builder =>
             {
                 builder.SetSampler(new AlwaysOnSampler());
+                builder.AddJaegerExporter(o => Configuration.Bind("Jaeger", o));
 
-                builder.UseJaegerExporter(o => Configuration.Bind("Jaeger", o));
-
-                builder.AddHttpInstrumentation();
+                var resourceBuilder = ResourceBuilder.CreateDefault();
+                resourceBuilder.AddService(Assembly.GetExecutingAssembly().FullName?.Split(',').FirstOrDefault());
+                builder.SetResourceBuilder(resourceBuilder);
                 builder.AddAspNetCoreInstrumentation();
                 builder.AddHttpClientInstrumentation();
+                builder.SetErrorStatusOnException();
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseHttpsRedirection();
 
@@ -49,8 +50,6 @@ namespace DistributedTracing.WebApp1
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-            
-            
         }
     }
 }

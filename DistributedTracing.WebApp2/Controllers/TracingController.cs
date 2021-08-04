@@ -21,7 +21,7 @@ namespace DistributedTracing.WebApp2.Controllers
         {
             var client = new HttpClient();
             var response = await client.GetStringAsync("http://localhost:5002/tracing?i=" + i);
-            
+
             return response;
         }
     }
